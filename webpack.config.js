@@ -4,6 +4,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // Used to call custom shell commands before/after build
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
+// .env.development.production.example
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
     // Include entry file(s)
     entry: ['./app/another_entry.js', './app/app.js'],
@@ -53,6 +56,9 @@ module.exports = {
             onBuildStart:['echo "\033[1;33mWebpack Start\033[0m"'],
             onBuildEnd:['echo "\033[1;32mWebpack End\033[0m"'],
             onBuildExit:['echo "\033[1;37mWebpack Exit\033[0m"']
+        }),
+        new Dotenv({
+            path: '.env.development'
         })
     ],
     // Resolve file extensions

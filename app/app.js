@@ -12,3 +12,9 @@ Class.test();
 
 // App loaded
 console.log('app loaded');
+
+env = function(v) {
+    return process.env[v];
+};
+
+console.log(env('MY_VARIABLE'));
