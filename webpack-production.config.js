@@ -1,18 +1,24 @@
 // Load strip loader
-var WebpackStripLoader = require('strip-loader');
+const WebpackStripLoader = require('strip-loader');
+
+// Babili plugin to compress production
+const BabiliPlugin = require('babili-webpack-plugin');
 
 // Include base config
-var devConfig = require('./webpack.config.js');
+const devConfig = require('./webpack.config.js');
 
 // .env.development.production.example
 const Dotenv = require('dotenv-webpack');
 
 // Strip 'console.log' from files
-let stripLoader = {
+const stripLoader = {
     test: [/\.js$/],
     exclude: /node_modules/,
     loader: WebpackStripLoader.loader('console.log')
 };
+
+// Babili plugin
+let babili = new BabiliPlugin();
 
 // Include stripped files
 devConfig.module.loaders.push(stripLoader);
@@ -23,6 +29,9 @@ let env = new Dotenv({
 });
 devConfig.plugins.pop();
 devConfig.plugins.push(env);
+
+// Include Babili plugin
+devConfig.plugins.push(babili);
 
 // Use base config
 module.exports = devConfig;
