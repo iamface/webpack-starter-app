@@ -21,7 +21,7 @@ const stripLoader = {
 let babili = new BabiliPlugin();
 
 // Include stripped files
-devConfig.module.loaders.push(stripLoader);
+devConfig.module.rules.push(stripLoader);
 
 // Use production .env.production
 let env = new Dotenv({
