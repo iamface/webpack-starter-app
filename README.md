@@ -22,8 +22,6 @@ of npm modules since not every application will need them, and can more easily b
 `$ npm run dev`
 
 This will start a new local web server using `webpack-dev-server` at **http://localhost:8080**.
-Since the application files exist in **/app** and the build files in **/public**, you will need to direct to
-**http://localhost:8080/public** to see your application.
 
 It will run `jshint` and inform you of any syntax issues while you develop as well as hot reload your browser
 as changes are made.
