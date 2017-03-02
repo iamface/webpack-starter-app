@@ -1,1 +1,5 @@
-console.log('es6 added');
+export default class ES6 {
+    doSomething() {
+        return 'Do Something';
+    }
+}
