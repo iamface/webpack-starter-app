@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 // Used for external CSS file
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -55,6 +57,13 @@ module.exports = {
         }),
         new Dotenv({
             path: '.env.development'
+        }),
+        // inject ES5 modules as global vars
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Tether: 'tether'
         })
     ],
     // Resolve file extensions

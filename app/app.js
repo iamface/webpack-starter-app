@@ -1,3 +1,5 @@
+import 'bootstrap';
+
 // Include CSS to be compiled
 require('./assets/css/app.scss');
 
@@ -13,4 +15,8 @@ Class.test();
 // App loaded
 console.log('app loaded');
 
+// .env loaded
 console.log(process.env.MY_VARIABLE);
+
+// jquery loaded
+console.log($);
