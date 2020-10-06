@@ -30,7 +30,7 @@
     "karma-mocha-reporter": "^2.2.2",
     "karma-webpack": "^2.0.2",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.10.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^4.0.2",
     "strip-loader": "^0.1.2",
     "style-loader": "^0.13.1",
